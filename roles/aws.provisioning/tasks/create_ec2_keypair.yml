@@ -1,0 +1,14 @@
+---
+
+- name: Create an EC2 ssh key
+  ec2_key:
+    name: "{{ aws_keypair_name }}"
+    region: "{{ aws_region }}"
+  register: ec2_key
+
+- name: Save SSH Private key locally
+  copy:
+    content: "{{ ec2_key.key.private_key }}"
+    dest: "./{{ aws_keypair_name }}.pem"
+    mode: 0600
+  when: ec2_key.changed

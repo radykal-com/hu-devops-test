@@ -1,0 +1,13 @@
+---
+
+- name: Launch ec2 instance
+  ec2:
+    key_name: "{{ aws_keypair_name }}"
+    group_id:
+      - "{{ aws_security_group_public_https.group_id }}"
+      - "{{ aws_security_group_management_ssh.group_id }}"
+    instance_type: "{{ aws_instance_type }}"
+    image: "{{ aws_ami[aws_region] }}"
+    wait: yes
+    region: "{{ aws_region }}"
+  register: ec2

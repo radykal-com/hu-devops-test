@@ -1,0 +1,7 @@
+---
+
+- name: Bring AWS environment resources up
+  hosts: localhost
+  connection: local
+  roles:
+    - role: aws.provisioning

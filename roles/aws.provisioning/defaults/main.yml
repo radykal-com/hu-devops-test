@@ -1,0 +1,12 @@
+---
+
+aws_ami:
+  eu-west-1: "ami-063d7038eec55d449"
+  eu-west-2: "ami-f10aff96"
+  eu-west-3: "ami-03443e5306761fbd3"
+  eu-central-1: "ami-0dea4adc94d997fbe"
+  us-east-1: "ami-041aac6c3637368de"
+
+aws_instance_type: "t2.micro"
+aws_region: "eu-west-1"
+aws_keypair_name: "hu-test"

@@ -1,0 +1,11 @@
+---
+
+- include: prepare_variables.yml
+
+# TODO create VPC, subnets and Routing tables
+
+- include: create_security_groups.yml
+
+- include: create_ec2_keypair.yml
+
+- include: launch_ec2_instance.yml

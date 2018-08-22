@@ -1,0 +1,5 @@
+---
+
+- include_vars: "{{ deploy_environment }}.yml"
+
+# TODO: run some sanity check of required variables to fail-fast
