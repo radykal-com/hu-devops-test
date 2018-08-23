@@ -1,0 +1,8 @@
+---
+
+- name: Run container
+  docker_container:
+    name: "{{ application_name }}"
+    image: "{{ application_name }}"
+    published_ports: "443:443"
+    restart_policy: "always"

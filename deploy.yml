@@ -3,5 +3,18 @@
 - name: Bring AWS environment resources up
   hosts: localhost
   connection: local
+  vars_files:
+    - vars/common.yml
   roles:
-    - role: aws.provisioning
+    - role: helloworldapp.provisioning
+
+- name: Configure and run hello world app
+  hosts: ec2launched
+  connection: ssh
+  gather_facts: true
+  become: yes
+  become_method: sudo
+  vars_files:
+    - vars/common.yml
+  roles:
+    - role: helloworldapp.configuration

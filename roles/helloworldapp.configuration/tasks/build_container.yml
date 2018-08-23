@@ -1,0 +1,33 @@
+---
+
+- name: Copy static html file
+  copy:
+    src: "files/index.html"
+    dest: "{{ static_html_dest }}"
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Render nginx config
+  template:
+    src: "templates/nginx.conf.j2"
+    dest: "{{ nginx_conf_dest }}"
+  register: nginx_config_file
+
+- name: Render Dockerfile
+  template:
+    src: "templates/Dockerfile.j2"
+    dest: "{{ dockerfile_dest }}"
+  register: dockerfile_file
+
+- name: Create htpasswd file for nginx
+  htpasswd:
+    path: "{{ htpasswd_dest }}"
+    name: "{{ nginx_http_auth_user }}"
+    password: "{{ nginx_http_auth_password }}"
+
+- name: Build container
+  docker_image:
+    path: "{{ working_dir }}"
+    name: "{{ application_name }}"
+    tag: latest

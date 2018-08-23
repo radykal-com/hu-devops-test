@@ -1,0 +1,9 @@
+---
+
+- include: install_packages.yml
+
+- include: configure_services.yml
+
+- include: build_container.yml
+
+- include: run_container.yml

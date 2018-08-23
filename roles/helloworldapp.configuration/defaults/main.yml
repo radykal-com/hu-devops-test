@@ -1,0 +1,20 @@
+---
+
+application_fqdn: "helloworld.test"
+
+working_dir: "/tmp"
+htpasswd_dest: "{{ working_dir }}/passwd"
+dockerfile_dest: "{{ working_dir }}/Dockerfile"
+nginx_conf_dest: "{{ working_dir }}/nginx.conf"
+static_html_dest: "{{ working_dir }}/index.html"
+
+# Self-signed certificate
+ssl_dir: "/etc/ssl"
+ssl_key_file: "{{ ssl_dir }}/{{ application_name }}.key"
+ssl_cert_file: "{{ ssl_dir }}/{{ application_name }}.cert"
+
+# Nginx HTTP Basic auth
+nginx_http_auth_user: "admin"
+nginx_http_auth_password: "admin"
+
+nginx_root_dir: "/var/app"
