@@ -3,5 +3,3 @@
 # aws_region: ""
 
 management_cidr: ""
-
-# aws_keypair_name: ""

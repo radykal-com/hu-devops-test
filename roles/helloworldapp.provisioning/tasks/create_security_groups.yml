@@ -1,6 +1,6 @@
 ---
 
-- name: "Create security group to allow https from the world"
+- name: Create security group to allow https from the world
   ec2_group:
     name: "public_https"
     description: Security Group for public https access
@@ -15,7 +15,7 @@
         cidr_ip: 0.0.0.0/0
   register: aws_security_group_public_https
 
-- name: "Management security group allows SSH access to the instance"
+- name: Management security group allows SSH access to the instance
   ec2_group:
     name: "management_ssh"
     description: Security Group for SSH access

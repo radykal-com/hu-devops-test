@@ -1,4 +1,5 @@
 .idea/
 vars/*.yml
+!vars/common.yml
 *.retry
 *.pem

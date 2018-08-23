@@ -9,4 +9,3 @@ aws_ami:
 
 aws_instance_type: "t2.micro"
 aws_region: "eu-west-1"
-aws_keypair_name: "hu-test"
