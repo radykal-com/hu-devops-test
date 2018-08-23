@@ -29,7 +29,8 @@ Replacing the `{}` placeholders with correct values:
 - deploy_environment: the name of the previously created configuration file without extension
 
 ### Limitations
-Only working in the following AWS regions (to allow more regions the corresponding AMI ids should be added to `roles/aws.provisioning/defaults/main.yml):
+It is required to have a default VPC in order to deploy this playbook.
+Only working in the following AWS regions (to allow more regions the corresponding AMI ids should be added to `roles/aws.provisioning/defaults/main.yml`):
   - eu-west-1 (default)
   - eu-west-2
   - eu-west-3
@@ -55,3 +56,7 @@ You can check it the following curl command
 curl -k -u admin:admin {url}
 ```
 \* replace {url} with the real URL obtained from the playbook
+
+### Improvements
+Network resources (VPC, Subnets and RouteTables) could be provisioned prior to create dependant resources to prevent
+the creation in the default VPC
