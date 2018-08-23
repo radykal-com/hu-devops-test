@@ -14,7 +14,9 @@ pip3 install -r requirements.txt
 
 ### Configuration
 Make a copy of the environment.yml.dist (in vars directory) and name it to whatever you like with .yml extension
-Then fill the properties accordly. The commented properties are optional.
+Then fill the properties accordly:
+- aws_region (optional, default: eu-west-1): the AWS region to deploy the resources. Read further to view list of allowed regions
+- management_cidr: IP CIDR from which ssh access will be allowed (required by ansible itself, so public IP of computer running this playbook must be in the CIDR). Format example: 8.8.8.0/24
 
 ### Launch
 From the root directory run the following command:
