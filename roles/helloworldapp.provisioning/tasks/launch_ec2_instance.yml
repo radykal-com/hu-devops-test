@@ -19,6 +19,10 @@
       Name: "{{ deploy_environment }}-{{ application_name }}"
   register: ec2
 
+- name: Set fact with public DNS of launched instance
+  set_fact:
+    ec2_public_dns: "{{ ec2.instances[0].public_dns_name }}"
+
 - name: Add new instance to host group
   add_host:
     hostname: "{{ item.public_dns_name }}"

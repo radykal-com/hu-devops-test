@@ -42,3 +42,16 @@ Only working in the following AWS regions (to allow more regions the correspondi
 - Key Pair: with the name configured in the configuration or with a default value of "hu-test". The private key will be stored in the root directory of this project. If you delete this file, neither Ansible or you will be able to connect to any instance launched using this key, so be carefully
 - EC2 instance: running Amazon Linux 2018.03 AMI
 - @TODO Clean resources automatically with a flag?
+
+### Access to the Hello World application
+The last task in the playbook will show a friendly message with the URL to the application.
+If accessing from a Browser you will need to allow the use of self-signed certificates
+The site is protected with http basic auth, the default credentials are:
+- username: admin
+- password: admin
+
+You can check it the following curl command 
+```
+curl -k -u admin:admin {url}
+```
+\* replace {url} with the real URL obtained from the playbook
