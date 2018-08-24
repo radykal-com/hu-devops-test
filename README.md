@@ -30,7 +30,7 @@ Replacing the `{}` placeholders with correct values:
 
 ### Limitations
 It is required to have a default VPC in order to deploy this playbook.
-Only working in the following AWS regions (to allow more regions the corresponding AMI ids should be added to `roles/aws.provisioning/defaults/main.yml`):
+Only working in the following AWS regions (to allow more regions the corresponding AMI ids should be added to `roles/helloworldapp.provisioning/defaults/main.yml`):
   - eu-west-1 (default)
   - eu-west-2
   - eu-west-3
